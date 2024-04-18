@@ -12,7 +12,6 @@ image:
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: ""
 
 podAnnotations: {}
 podLabels: {}
@@ -35,7 +34,7 @@ service:
 labels:
   name: sadsnake
 
-name: sadsnake
+namespace: sadsnake
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -57,13 +56,6 @@ readinessProbe:
   httpGet:
     path: /
     port: http
-
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
 
 # Additional volumes on the output Deployment definition.
 volumes: []
